@@ -1,10 +1,7 @@
 PHÂN CHIA LẠI CÔNG VIỆC — PHASE 1 (DECOMPOSITION)
+docx: https://docs.google.com/document/d/1NvRyzy36-N4hQsN6YBcYttN6t8ti-aUuGf1e2KEraWo/edit?usp=sharing
+
 1. BẢNG PHÂN CÔNG MỚI
-Thành viên	Module	Classes chính
-Vinh (SE203014)	USER ENTITY	User, FriendList
-Thắng (SE203159)	DLL STORAGE	NodeDLL, DLLStorage
-Sang (SE202034)	BST SEARCH	NodeBST, BSTSearch
-Trung (SE201971)	INTEGRATION & FACADE	SocialNetworkFacade, Main
 2. CHI TIẾT TỪNG MODULE
 🧑‍💻 VINH — USER ENTITY
 Classes cần thiết kế:
