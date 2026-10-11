@@ -9,7 +9,6 @@ Classes cần thiết kế:
 1. User:
    - id (int), name (String), friendList (FriendList)
    - getId(), getName(), setName(), getFriendList()
-   - addFriend(), removeFriend(), isFriend(), getFriendCount(), toString()
 
 2. FriendList:
    - head (Node), tail (Node), size (int)
