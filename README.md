@@ -1,5 +1,5 @@
 PHÂN CHIA LẠI CÔNG VIỆC — PHASE 1 (DECOMPOSITION)
-
+/* Note chưa có Package thì tự tạo thêm!. Facade, UI Layer của Trung, Algorithm Layer*/
 docx: https://docs.google.com/document/d/1NvRyzy36-N4hQsN6YBcYttN6t8ti-aUuGf1e2KEraWo/edit?usp=sharing
 
 1. BẢNG PHÂN CÔNG MỚI
