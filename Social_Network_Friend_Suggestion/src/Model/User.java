@@ -1,4 +1,4 @@
-package Entity;
+package Model;
 
 import java.util.List;
 
@@ -7,23 +7,23 @@ public class User{
     private String name;
     private String email;
     private String password;
-    private List<Integer> friendlist;
+    private List<Integer> friendids;
 
-    public User(int id, String name, String email, String password, List<Integer> friendlist) {
+    public User(int id, String name, String email, String password, List<Integer> friendids) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
-        this.friendlist = friendlist;
+        this.friendids = friendids;
     }
 
     // Getters and setters
-    public List<Integer> getFriendlist() {
-        return friendlist;
+    public List<Integer> getFriendids() {
+        return friendids;
     }
 
-    public void setFriendlist(List<Integer> friendlist) {
-        this.friendlist = friendlist;
+    public void setFriendids(List<Integer> friendids) {
+        this.friendids = friendids;
     }
 
     public int getId() {
@@ -56,28 +56,6 @@ public class User{
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    // Thêm bạn (chỉ lưu ID)
-    public void addFriend(int friendId) {
-        if (friendId != this.id && !friendlist.contains(friendId)) {
-            friendlist.add(friendId);
-        }
-    }
-
-    // Xóa bạn
-    public void removeFriend(int friendId) {
-        friendlist.remove(Integer.valueOf(friendId));
-    }
-
-    // check xem có phải là bạn hay không
-    public boolean isFriend(int friendId) {
-        return friendlist.contains(friendId);
-    }
-
-    // Đếm số bạn
-    public int getFriendCount() {
-        return friendlist.size();
     }
 
     @Override
