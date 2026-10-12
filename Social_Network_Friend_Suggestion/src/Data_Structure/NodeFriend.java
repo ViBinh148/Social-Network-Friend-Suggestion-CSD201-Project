@@ -36,7 +36,7 @@ public class NodeFriend {
     public void setPrev(NodeFriend prev) {
         this.prev = prev;
     }
-
+    //tostring
     @Override
     public String toString() {
         return "NodeFriend{" + "data=" + data + ", next=" + next + ", prev=" + prev +'}';
