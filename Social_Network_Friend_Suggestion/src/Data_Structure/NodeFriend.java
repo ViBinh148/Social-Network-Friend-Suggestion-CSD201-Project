@@ -5,7 +5,7 @@ import Model.User;
 public class NodeFriend {
     private User data;
     private NodeFriend next;
-    private NodeFriend prev;
+    private NodeFriend prev;    
 
     public NodeFriend(User data) {
         this.data = data;
@@ -39,6 +39,6 @@ public class NodeFriend {
     //tostring
     @Override
     public String toString() {
-        return "NodeFriend{" + "data=" + data + ", next=" + next + ", prev=" + prev +'}';
+        return String.valueOf(this.data);
     }
 }
