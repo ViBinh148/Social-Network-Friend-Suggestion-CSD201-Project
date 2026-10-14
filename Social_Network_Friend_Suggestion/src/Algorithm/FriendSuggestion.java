@@ -1,5 +1,5 @@
-package Algorithm;
-import Model.User;
+package algorithm;
+import model.User;
 
 
 public class FriendSuggestion {

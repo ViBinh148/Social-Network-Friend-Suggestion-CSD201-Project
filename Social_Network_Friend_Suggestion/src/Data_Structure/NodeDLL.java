@@ -4,7 +4,7 @@
  */
 package Data_Structure;
 
-import Model.User;
+import model.User;
 
 /**
  *
