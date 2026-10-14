@@ -1,4 +1,7 @@
+package UI;
+
 import java.util.Scanner;
+import Facade.SocialNetworkFacade;
 
 
 public class Main {

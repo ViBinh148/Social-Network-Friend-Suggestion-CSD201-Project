@@ -1,3 +1,6 @@
+package Algorithm;
+import Model.User;
+
 
 public class FriendSuggestion {
 
@@ -6,19 +9,28 @@ public class FriendSuggestion {
 
 
     public FriendSuggestion(User user, int mutualCount) {
-
+        this.user = user;
+        this.mutualCount = mutualCount;
     }
  
     public User getUser() {
-        return null;
+        return this.user;
     }
 
     public int getMutualCount() {
-        return 0;
+        return this.mutualCount;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public void setMutualCount(int mutualCount) {
+        this.mutualCount = mutualCount;
     }
 
     @Override
     public String toString() {
-        return null;
+        return "FriendSuggestion{" +"user=" + user + ", mutualCount=" + mutualCount + '}';
     }
 }
