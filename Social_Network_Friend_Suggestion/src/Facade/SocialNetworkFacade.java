@@ -1,3 +1,9 @@
+package facade;
+
+import model.User;
+import algorithm.BSTSearch;
+import data_Structure.DLLStorage;
+import algorithm.FriendSuggestion;
 
 public class SocialNetworkFacade {
 
@@ -7,6 +13,27 @@ public class SocialNetworkFacade {
     
     public SocialNetworkFacade() {
 
+    }
+
+    public SocialNetworkFacade(DLLStorage dllStorage, BSTSearch bstSearch) {
+        this.dllStorage = dllStorage;
+        this.bstSearch = bstSearch;
+    }
+
+    public DLLStorage getDllStorage() {
+        return dllStorage;
+    }
+
+    public void setDllStorage(DLLStorage dllStorage) {
+        this.dllStorage = dllStorage;
+    }
+
+    public BSTSearch getBstSearch() {
+        return bstSearch;
+    }
+
+    public void setBstSearch(BSTSearch bstSearch) {
+        this.bstSearch = bstSearch;
     }
 
     

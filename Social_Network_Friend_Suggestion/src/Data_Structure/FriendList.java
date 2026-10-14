@@ -36,27 +36,33 @@ public class FriendList {
     public void setSize(int size) {
         this.size = size;
     }
-    //is empty
-        public boolean isEmpty() {
-        if (this.head == null && this.tail == null) {
-            return true;
-        } else {
-            return false;
-        }
+
+    public boolean isEmpty() {
+        return head == null;
     }
 
-    //Add
     public void addFriend(User data) {
-        NodeFriend newNode = new NodeFriend(data);
-        if (head == null) {
-            head = newNode;
-            tail = newNode;
-        } else {
-            tail.setNext(newNode);
-            newNode.setPrev(tail);
-            tail = newNode;
-        }
-        size++;
+
+    }
+
+    public void removeFriend(User data) {
+ 
+    }
+
+    public void traverse() {
+
+    }
+
+    public void traverseReverse() {
+
+    }
+
+    public boolean isFriend(int userId) {
+        return findFriend(userId) != null;
+    }
+
+    public User findFriend(int userId) {
+        return null;
     }
 
 }
