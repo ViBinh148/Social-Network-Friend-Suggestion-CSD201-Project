@@ -1,6 +1,6 @@
-package Model;
+package model;
 
-import Data_Structure.FriendList;
+import data_Structure.FriendList;
 
 public class User{
     private int id;

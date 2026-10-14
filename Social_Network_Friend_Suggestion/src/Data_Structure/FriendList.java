@@ -1,6 +1,6 @@
-package Data_Structure;
+package data_Structure;
 
-import Model.User;
+import model.User;
 
 public class FriendList {
     private NodeFriend head;

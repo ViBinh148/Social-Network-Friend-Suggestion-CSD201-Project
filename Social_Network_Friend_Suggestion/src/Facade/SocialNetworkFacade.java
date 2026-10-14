@@ -2,7 +2,7 @@ package facade;
 
 import model.User;
 import algorithm.BSTSearch;
-import data_Structure.DLLStorage;
+import Data_Structure.DLLStorage;
 import algorithm.FriendSuggestion;
 
 public class SocialNetworkFacade {
