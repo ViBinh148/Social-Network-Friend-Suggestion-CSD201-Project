@@ -1,9 +1,9 @@
-package UI;
+package ui;
 
 import java.util.Scanner;
 import facade.SocialNetworkFacade;
 
-
+//main class to run the program
 public class Main {
 
 
