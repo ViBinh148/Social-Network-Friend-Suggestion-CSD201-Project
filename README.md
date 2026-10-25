@@ -1,10 +1,13 @@
-PHÂN CHIA LẠI CÔNG VIỆC — PHASE 3 (Pattern Recognition)
-/* Nội dung Pattern - Part 3  */
+PHÂN CHIA LẠI CÔNG VIỆC — PHASE 4
+/* Nội dung Pattern - Part 4  */
 docx Abstraction: https://docs.google.com/document/d/1X9Gmutb3Zr1e8bJoWNRWibtrFHL_DBbzO0Dxha4xI4E/edit?usp=sharing
 
-Với Assignment 1 – Abstraction – Part 3
-  1. 1 file docx Nhận diện mẫu
-  2. Vẽ Class Diagram, Tree Diagram hoặc mã giả
-  3. AI audit Log
+Yêu cầu chính thức của Part 4
+Hạng mục	Yêu cầu
+Tiêu chí đánh giá	Cài đặt thuật toán, tối ưu hóa code
+Hoạt động cụ thể	Thêm các giải thuật Sorting, Searching, AVL Tree, Graph Traversal
+Bài làm cá nhân	AI Audit Log theo mẫu
+Tên file	StudentID-Fullnam-Part4.xlsx
+Nộp bài	Nhóm trưởng tổng hợp thành N#.rar
 
-<img width="597" height="277" alt="image" src="https://github.com/user-attachments/assets/e3c5e84b-c5e7-453e-a8c6-ffe2eb6cb61a" />
+Lưu ý: Nội dung bạn gửi chưa nói rằng mỗi sinh viên bắt buộc phải cài đặt cả Sorting, Searching, AVL Tree và Graph Traversal. Chúng ta nên chọn những thuật toán phù hợp với module được phân công
