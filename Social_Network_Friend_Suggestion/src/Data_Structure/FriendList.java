@@ -41,16 +41,38 @@ public class FriendList {
         return head == null;
     }
 
-    public void addFriend(User data) {
+    public void addFriendTail(User data) { //addTail
+        if(isEmpty()) {
+            NodeFriend newNode = new NodeFriend(data);
+            head = newNode;
+            tail = newNode;
+        } else {
+            NodeFriend newNode = new NodeFriend(data);
+            tail.setNext(newNode);
+            newNode.setPrev(tail);
+            tail = newNode;
+        }
+    }
 
+    public void addFriendHead(User data) { //addhead
+        if(isEmpty()) {
+            NodeFriend newNode = new NodeFriend(data);
+            head = newNode;
+            tail = newNode;
+        } else {
+            NodeFriend newNode = new NodeFriend(data);
+            newNode.setNext(head);
+            head.setPrev(newNode);
+            head = newNode;
+        }
     }
 
     public void removeFriend(User data) {
- 
+
     }
 
     public void traverse() {
-
+        
     }
 
     public void traverseReverse() {
@@ -58,7 +80,16 @@ public class FriendList {
     }
 
     public boolean isFriend(int userId) {
-        return findFriend(userId) != null;
+        NodeFriend current = head;
+
+        while (current != null) {
+            if (current.getData().getId() == userId) {
+                return true;
+            }
+            current = current.getNext();
+        }
+
+        return false;
     }
 
     public User findFriend(int userId) {
