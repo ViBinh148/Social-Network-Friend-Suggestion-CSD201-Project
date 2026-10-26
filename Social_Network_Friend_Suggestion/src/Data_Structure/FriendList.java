@@ -58,7 +58,16 @@ public class FriendList {
     }
 
     public boolean isFriend(int userId) {
-        return findFriend(userId) != null;
+            NodeFriend current = head;
+
+    while (current != null) {
+        if (current.getData().getId() == userId) {
+            return true;
+        }
+        current = current.getNext();
+    }
+
+    return false;
     }
 
     public User findFriend(int userId) {
