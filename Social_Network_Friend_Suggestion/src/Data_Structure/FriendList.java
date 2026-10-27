@@ -41,8 +41,8 @@ public class FriendList {
         return head == null;
     }
 
-    public void addFriendTail(User data) { //addTail
-        if(isEmpty()) {
+    public void addFriendTail(User data) { // addTail
+        if (isEmpty()) {
             NodeFriend newNode = new NodeFriend(data);
             head = newNode;
             tail = newNode;
@@ -52,10 +52,11 @@ public class FriendList {
             newNode.setPrev(tail);
             tail = newNode;
         }
+        size++;
     }
 
-    public void addFriendHead(User data) { //addhead
-        if(isEmpty()) {
+    public void addFriendHead(User data) { // addhead
+        if (isEmpty()) {
             NodeFriend newNode = new NodeFriend(data);
             head = newNode;
             tail = newNode;
@@ -65,20 +66,53 @@ public class FriendList {
             head.setPrev(newNode);
             head = newNode;
         }
+        size++;
     }
 
-    public void removeFriend(User data) {
-
+    public boolean removeFriend(User data) { // remove by User object
+        if (this.isEmpty()) {
+            System.out.println("Empty");
+            return false;
+        } else if (head == tail) {
+            this.head = null;
+            this.tail = null;
+        } else {
+            this.head = this.head.getNext();
+            this.head.setPrev(null);
+        }
+        size--;
+        return true;
     }
 
-    public void traverse() {
-        
+    public void traverseHead() { // traverse
+        if (isEmpty()) {
+            System.out.println("Friend list is empty.");
+            return;
+        } else {
+            NodeFriend current = head;
+
+            while (current != null) {
+                System.out.println(current.getData());
+                current = current.getNext();
+            }
+        }
     }
 
-    public void traverseReverse() {
+    public void traverseTail() { // traverse tail
+        if (isEmpty()) {
+            System.out.println("Friend list is empty.");
+            return;
+        } else {
+            NodeFriend current = tail;
 
+            while (current != null) {
+                System.out.println(current.getData());
+                current = current.getPrev();
+            }
+        }
     }
 
+    // check if user is friend by userId
     public boolean isFriend(int userId) {
         NodeFriend current = head;
 
@@ -92,8 +126,19 @@ public class FriendList {
         return false;
     }
 
+    // find friend by userId
     public User findFriend(int userId) {
+        NodeFriend current = head;
+
+        while (current != null) {
+            if (current.getData().getId() == userId) {
+                return current.getData();
+            }
+            current = current.getNext();
+        }
+
         return null;
+
     }
 
 }
