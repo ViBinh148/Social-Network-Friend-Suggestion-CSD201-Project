@@ -69,17 +69,44 @@ public class FriendList {
         size++;
     }
 
-    public boolean removeFriend(User data) { // remove by User object
-        if (this.isEmpty()) {
-            System.out.println("Empty");
+    public boolean removeFriend(User data) {
+        if (isEmpty() || data == null) {
             return false;
-        } else if (head == tail) {
-            this.head = null;
-            this.tail = null;
-        } else {
-            this.head = this.head.getNext();
-            this.head.setPrev(null);
         }
+
+        NodeFriend current = head;
+
+        // Tìm User cần xóa
+        while (current != null) {
+            if (current.getData().getId() == data.getId()) {
+                break;
+            }
+            current = current.getNext();
+        }
+
+        // Không tìm thấy User
+        if (current == null) {
+            return false;
+        }
+
+        //Chỉ có một node
+        if (head == tail) {
+            head = null;
+            tail = null;
+        }
+
+        //Xóa node đầu
+        else if (current == head) {
+            head = head.getNext();
+            head.setPrev(null);
+        }
+
+        //Xóa node cuối
+        else if (current == tail) {
+            tail = tail.getPrev();
+            tail.setNext(null);
+        }
+
         size--;
         return true;
     }
