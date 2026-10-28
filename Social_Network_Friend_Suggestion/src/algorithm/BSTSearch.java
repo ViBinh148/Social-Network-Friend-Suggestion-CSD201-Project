@@ -4,6 +4,8 @@
  */
 package algorithm;
 
+import java.util.ArrayList;
+import java.util.List;
 import model.User;
 
 /**
@@ -66,8 +68,7 @@ public class BSTSearch {
             node.setLeft(deleteRec(node.getLeft(), id));
         } else if (id > node.getData().getId()) {
             node.setRight(deleteRec(node.getRight(), id));
-        } 
-        // Tim thay (id == node.getData().getId())
+        } // Tim thay (id == node.getData().getId())
         else {
             // TH: Node chi co 1 con or khong co con
             if (node.getLeft() == null) {
@@ -102,23 +103,94 @@ public class BSTSearch {
         return searchRec(node.getRight(), id);
     }
 
-    public void inOrder() {
-
+    // tra ve danh sach user
+    public List<User> inOrderList() {
+        List<User> list = new ArrayList<>();
+        inOrderRec(root, list);
+        return list;
     }
 
-    public void findMin() {
-
+    // duyet va them vao list
+    private void inOrderRec(NodeBST node, List<User> list) {
+        if (node != null) {
+            inOrderRec(node.getLeft(), list);   // duyet trai
+            list.add(node.getData());           // add node vao list
+            inOrderRec(node.getRight(), list);  // duyet phai
+        }
     }
 
-    public void findMax() {
-
+    public User findMin() {
+        if (isEmpty()) {
+            return null;
+        }
+        return findMinRec(root);
     }
 
-    public void height() {
-
+    // find User co ID nho nhat trong mot nhanh cay(dung cho delete va findMin)
+    private User findMinRec(NodeBST node) {
+        User minVal = node.getData();
+        while (node.getLeft() != null) {
+            minVal = node.getLeft().getData();
+            node = node.getLeft();
+        }
+        return minVal;
     }
 
-    public void isBalanced() {
+    public User findMax() {
+        if (isEmpty()) {
+            return null;
+        }
 
+        NodeBST node = root;
+        User maxVal = node.getData();
+        while (node.getRight() != null) {
+            maxVal = node.getRight().getData();
+            node = node.getRight();
+        }
+        return maxVal;
+    }
+
+    public int height() {
+        return heightRec(root);
+    }
+
+    private int heightRec(NodeBST node) {
+        if (node == null) {
+            return 0;
+        }
+
+        int leftHeight = heightRec(node.getLeft());
+        int rightHeight = heightRec(node.getRight());
+
+        return Math.max(leftHeight, rightHeight) + 1;
+    }
+
+    public boolean isBalanced() {
+        return isBalancedRec(root);
+    }
+
+    private boolean isBalancedRec(NodeBST node) {
+        if (node == null) {
+            return true;
+        }
+
+        int leftHeight = heightRec(node.getLeft());
+        int rightHeight = heightRec(node.getRight());
+
+        //
+        int balanceFactor;
+        if (leftHeight > rightHeight) {
+            balanceFactor = leftHeight - rightHeight;
+        } else {
+            balanceFactor = rightHeight - leftHeight;
+        }
+
+        if (balanceFactor <= 1
+                && isBalancedRec(node.getLeft())
+                && isBalancedRec(node.getRight())) {
+            return true;
+        }
+
+        return false;
     }
 }
