@@ -37,7 +37,7 @@ public class SocialNetworkFacade {
     }
 
     
-    public boolean addUser(int id, String name) {
+    public boolean addUser(int id, String name, String email) {
         return false;
     }
 

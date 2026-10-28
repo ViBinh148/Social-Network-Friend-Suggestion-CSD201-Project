@@ -2,6 +2,17 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/D:/KI4/CSD201/Social-Network-Friend-Suggestion-CSD201-Project/Social-Network-Friend-Suggestion-CSD201-Project/Social_Network_Friend_Suggestion/src/Data_Structure/NodeDLL.java</file>
+            <file>file:/D:/KI4/CSD201/Social-Network-Friend-Suggestion-CSD201-Project/Social-Network-Friend-Suggestion-CSD201-Project/Social_Network_Friend_Suggestion/src/algorithm/BSTSearch.java</file>
+            <file>file:/D:/KI4/CSD201/Social-Network-Friend-Suggestion-CSD201-Project/Social-Network-Friend-Suggestion-CSD201-Project/Social_Network_Friend_Suggestion/src/Data_Structure/NodeFriend.java</file>
+            <file>file:/D:/KI4/CSD201/Social-Network-Friend-Suggestion-CSD201-Project/Social-Network-Friend-Suggestion-CSD201-Project/Social_Network_Friend_Suggestion/src/algorithm/NodeBST.java</file>
+            <file>file:/D:/KI4/CSD201/Social-Network-Friend-Suggestion-CSD201-Project/Social-Network-Friend-Suggestion-CSD201-Project/Social_Network_Friend_Suggestion/src/Facade/SocialNetworkFacade.java</file>
+            <file>file:/D:/KI4/CSD201/Social-Network-Friend-Suggestion-CSD201-Project/Social-Network-Friend-Suggestion-CSD201-Project/Social_Network_Friend_Suggestion/src/UI/Main.java</file>
+            <file>file:/D:/KI4/CSD201/Social-Network-Friend-Suggestion-CSD201-Project/Social-Network-Friend-Suggestion-CSD201-Project/Social_Network_Friend_Suggestion/src/Model/User.java</file>
+            <file>file:/D:/KI4/CSD201/Social-Network-Friend-Suggestion-CSD201-Project/Social-Network-Friend-Suggestion-CSD201-Project/Social_Network_Friend_Suggestion/src/algorithm/FriendSuggestion.java</file>
+            <file>file:/D:/KI4/CSD201/Social-Network-Friend-Suggestion-CSD201-Project/Social-Network-Friend-Suggestion-CSD201-Project/Social_Network_Friend_Suggestion/src/Data_Structure/FriendList.java</file>
+            <file>file:/D:/KI4/CSD201/Social-Network-Friend-Suggestion-CSD201-Project/Social-Network-Friend-Suggestion-CSD201-Project/Social_Network_Friend_Suggestion/src/Data_Structure/DLLStorage.java</file>
+        </group>
     </open-files>
 </project-private>

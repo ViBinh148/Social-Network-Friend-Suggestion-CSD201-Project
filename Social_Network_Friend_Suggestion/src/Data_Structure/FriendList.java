@@ -3,6 +3,7 @@ package data_Structure;
 import model.User;
 
 public class FriendList {
+
     private NodeFriend head;
     private NodeFriend tail;
     private int size;
@@ -93,18 +94,20 @@ public class FriendList {
         if (head == tail) {
             head = null;
             tail = null;
-        }
-
-        //Xóa node đầu
+        } //Xóa node đầu
         else if (current == head) {
             head = head.getNext();
             head.setPrev(null);
-        }
-
-        //Xóa node cuối
+        } //Xóa node cuối
         else if (current == tail) {
             tail = tail.getPrev();
             tail.setNext(null);
+        } 
+
+        //Xóa node ở giữa 
+        else {
+            current.getPrev().setNext(current.getNext());
+            current.getNext().setPrev(current.getPrev());
         }
 
         size--;
