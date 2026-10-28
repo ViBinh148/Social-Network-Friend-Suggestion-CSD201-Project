@@ -32,9 +32,18 @@ public class BSTSearch {
         }
     }
 
-    public void insert(User user) {
+
+    public boolean insert(User user) {
+        if (user == null) {
+            return false;
+        }
+
+        if (search(user.getId()) != null) {
+            return false;
+        }
+
         root = insertRec(root, user);
-    }
+        return true;
 
     private NodeBST insertRec(NodeBST node, User user) {
         if (node == null) {
@@ -154,6 +163,28 @@ public class BSTSearch {
         return heightRec(root);
     }
 
+    public void findMax() {
+
+
+    // de quy xu ly search
+    private NodeBST searchRec(NodeBST node, int id) {
+        // Khong tim thay neu da di het nhanh cay.
+        if (node == null) {
+            return null;
+        }
+
+        int currentId = node.getData().getId();
+
+        // Tim thay nguoi dung.
+        if (id == currentId) {
+            return node;
+        }
+        if (id < node.getData().getId()) {
+            return searchRec(node.getLeft(), id);
+        }
+        return searchRec(node.getRight(), id);
+
+
     private int heightRec(NodeBST node) {
         if (node == null) {
             return 0;
@@ -163,6 +194,7 @@ public class BSTSearch {
         int rightHeight = heightRec(node.getRight());
 
         return Math.max(leftHeight, rightHeight) + 1;
+
     }
 
     public boolean isBalanced() {

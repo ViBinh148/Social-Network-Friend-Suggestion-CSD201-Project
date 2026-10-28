@@ -11,6 +11,7 @@ import model.User;
  * @author ADMIN
  */
 public class NodeDLL {
+
     private User data;
     private NodeDLL next;
     private NodeDLL previous;
@@ -23,6 +24,8 @@ public class NodeDLL {
 
     public NodeDLL(User data) {
         this.data = data;
+        this.next = null;
+        this.previous = null;
     }
 
     public void setData(User data) {
@@ -53,6 +56,5 @@ public class NodeDLL {
     public String toString() {
         return String.valueOf(data);
     }
-    
-    
+
 }
