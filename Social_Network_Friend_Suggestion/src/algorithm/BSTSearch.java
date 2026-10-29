@@ -1,3 +1,4 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -45,6 +46,7 @@ public class BSTSearch {
         root = insertRec(root, user);
         return true;
     }
+
     // de quy xu ly insert
     private NodeBST insertRec(NodeBST node, User user) {
         if (node == null) {
@@ -55,9 +57,9 @@ public class BSTSearch {
         int newId = user.getId();
 
         if (newId < currentId) {
-            node.setLeft(insertRec(node.getLeft(), user));
+            node.setLeft(insertRec(node.getLeft(), user)); // insert vao nhanh trai
         } else if (newId > currentId) {
-            node.setRight(insertRec(node.getRight(), user));
+            node.setRight(insertRec(node.getRight(), user)); // insert vao nhanh phai
         }
 
         return node;
@@ -73,12 +75,14 @@ public class BSTSearch {
         if (node == null) {
             return node;
         }
+
         // tim node delete
         if (id < node.getData().getId()) {
             node.setLeft(deleteRec(node.getLeft(), id));
         } else if (id > node.getData().getId()) {
             node.setRight(deleteRec(node.getRight(), id));
-        } // Tim thay (id == node.getData().getId())
+        }
+        // Tim thay (id == node.getData().getId())
         else {
             // TH: Node chi co 1 con or khong co con
             if (node.getLeft() == null) {
@@ -95,6 +99,7 @@ public class BSTSearch {
             // Xóa nút minUser ben phai
             node.setRight(deleteRec(node.getRight(), minUser.getId()));
         }
+
         return node;
     }
 
@@ -107,9 +112,11 @@ public class BSTSearch {
         if (node == null || node.getData().getId() == id) {
             return node;
         }
+
         if (id < node.getData().getId()) {
             return searchRec(node.getLeft(), id);
         }
+
         return searchRec(node.getRight(), id);
     }
 
@@ -133,16 +140,19 @@ public class BSTSearch {
         if (isEmpty()) {
             return null;
         }
+
         return findMinRec(root);
     }
 
     // find User co ID nho nhat trong mot nhanh cay(dung cho delete va findMin)
     private User findMinRec(NodeBST node) {
         User minVal = node.getData();
+
         while (node.getLeft() != null) {
             minVal = node.getLeft().getData();
             node = node.getLeft();
         }
+
         return minVal;
     }
 
@@ -153,10 +163,12 @@ public class BSTSearch {
 
         NodeBST node = root;
         User maxVal = node.getData();
+
         while (node.getRight() != null) {
             maxVal = node.getRight().getData();
             node = node.getRight();
         }
+
         return maxVal;
     }
 
@@ -173,7 +185,6 @@ public class BSTSearch {
         int rightHeight = heightRec(node.getRight());
 
         return Math.max(leftHeight, rightHeight) + 1;
-
     }
 
     public boolean isBalanced() {
