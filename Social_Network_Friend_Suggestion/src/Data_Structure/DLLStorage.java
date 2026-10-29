@@ -76,6 +76,7 @@ public class DLLStorage {
         if (isEmpty()) {
             this.head = new_data;
             this.tail = new_data;
+            size++;
             return true;
         }
         if (findUserById(user.getId()) != null) {
