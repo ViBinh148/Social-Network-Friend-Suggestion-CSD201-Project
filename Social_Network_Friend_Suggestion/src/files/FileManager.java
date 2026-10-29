@@ -2,8 +2,14 @@
 package files;
 
 import facade.SocialNetworkFacade;
+import data_Structure.NodeDLL;
+import data_Structure.NodeFriend;
+import model.User;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class FileManager {
@@ -54,6 +60,68 @@ public class FileManager {
 
         } catch (IOException e) {
             System.out.println("Error loading friendships: " + e.getMessage());
+        }
+    }
+
+    // Lưu danh sách User từ DLL xuống file
+    public static void saveUsers(SocialNetworkFacade facade) {
+        try (BufferedWriter bw =
+                new BufferedWriter(new FileWriter("data/users.txt"))) {
+
+            NodeDLL current = facade.getDllStorage().getHead();
+
+            while (current != null) {
+
+                User user = current.getData();
+
+                bw.write(user.getId() + "|" + user.getName() + "|" + user.getEmail());
+
+                bw.newLine();
+
+                current = current.getNext();
+            }
+
+            System.out.println("Users saved successfully.");
+
+        } catch (IOException e) {
+            System.out.println("Error saving users: " + e.getMessage());
+        }
+    }
+
+    // Lưu quan hệ bạn bè từ FriendList xuống file
+    public static void saveFriendships(SocialNetworkFacade facade) {
+        try (BufferedWriter bw =
+                new BufferedWriter(new FileWriter("data/friendships.txt"))) {
+
+            NodeDLL current = facade.getDllStorage().getHead();
+
+            while (current != null) {
+
+                User user = current.getData();
+
+                NodeFriend friend = user.getFriendlist().getHead();
+
+                while (friend != null) {
+
+                    int id1 = user.getId();
+                    int id2 = friend.getData().getId();
+
+                    // Chỉ lưu một lần cho mỗi quan hệ hai chiều
+                    if (id1 < id2) {
+                        bw.write(id1 + "|" + id2);
+                        bw.newLine();
+                    }
+
+                    friend = friend.getNext();
+                }
+
+                current = current.getNext();
+            }
+
+            System.out.println("Friendships saved successfully.");
+
+        } catch (IOException e) {
+            System.out.println("Error saving friendships: " + e.getMessage());
         }
     }
 }
