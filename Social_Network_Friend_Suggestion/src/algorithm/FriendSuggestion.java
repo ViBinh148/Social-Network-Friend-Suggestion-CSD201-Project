@@ -1,36 +1,47 @@
+
 package algorithm;
+
 import model.User;
 
-
-public class FriendSuggestion {
+public class FriendSuggestion implements Comparable<FriendSuggestion> {
 
     private User user;
     private int mutualCount;
-
 
     public FriendSuggestion(User user, int mutualCount) {
         this.user = user;
         this.mutualCount = mutualCount;
     }
- 
-    public User getUser() {
-        return this.user;
-    }
 
-    public int getMutualCount() {
-        return this.mutualCount;
+    public User getUser() {
+        return user;
     }
 
     public void setUser(User user) {
         this.user = user;
     }
 
+    public int getMutualCount() {
+        return mutualCount;
+    }
+
     public void setMutualCount(int mutualCount) {
         this.mutualCount = mutualCount;
     }
 
+    // Sắp xếp giảm dần theo số bạn chung
+    // Nếu bằng nhau thì User có ID nhỏ hơn đứng trước
+    @Override
+    public int compareTo(FriendSuggestion other) {
+        if (this.mutualCount != other.mutualCount) {
+            return Integer.compare(other.mutualCount, this.mutualCount);
+        }
+
+        return Integer.compare(this.user.getId(), other.user.getId());
+    }
+
     @Override
     public String toString() {
-        return "FriendSuggestion{" +"user=" + user + ", mutualCount=" + mutualCount + '}';
+        return user.getName() + " (ID " + user.getId() + ") - " + mutualCount + " mutual friends";
     }
 }
