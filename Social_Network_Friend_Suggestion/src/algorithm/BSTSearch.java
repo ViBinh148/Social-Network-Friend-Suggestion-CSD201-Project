@@ -81,8 +81,7 @@ public class BSTSearch {
             node.setLeft(deleteRec(node.getLeft(), id));
         } else if (id > node.getData().getId()) {
             node.setRight(deleteRec(node.getRight(), id));
-        }
-        // Tim thay (id == node.getData().getId())
+        } // Tim thay (id == node.getData().getId())
         else {
             // TH: Node chi co 1 con or khong co con
             if (node.getLeft() == null) {
@@ -156,6 +155,7 @@ public class BSTSearch {
         return minVal;
     }
 
+    // find User co ID lon nhat trong mot nhanh cay
     public User findMax() {
         if (isEmpty()) {
             return null;
@@ -163,15 +163,14 @@ public class BSTSearch {
 
         NodeBST node = root;
         User maxVal = node.getData();
-
         while (node.getRight() != null) {
             maxVal = node.getRight().getData();
             node = node.getRight();
         }
-
         return maxVal;
     }
 
+    // Tra ve chieu cao cua cây
     public int height() {
         return heightRec(root);
     }
@@ -184,9 +183,14 @@ public class BSTSearch {
         int leftHeight = heightRec(node.getLeft());
         int rightHeight = heightRec(node.getRight());
 
-        return Math.max(leftHeight, rightHeight) + 1;
+        if (leftHeight > rightHeight) {
+            return leftHeight + 1;
+        } else {
+            return rightHeight + 1;
+        }
     }
 
+    // Check cay co dang o trang thai can bang hay khong
     public boolean isBalanced() {
         return isBalancedRec(root);
     }
@@ -198,21 +202,18 @@ public class BSTSearch {
 
         int leftHeight = heightRec(node.getLeft());
         int rightHeight = heightRec(node.getRight());
-
-        //
         int balanceFactor;
+        
         if (leftHeight > rightHeight) {
             balanceFactor = leftHeight - rightHeight;
         } else {
             balanceFactor = rightHeight - leftHeight;
         }
-
         if (balanceFactor <= 1
                 && isBalancedRec(node.getLeft())
                 && isBalancedRec(node.getRight())) {
             return true;
         }
-
         return false;
     }
 }
