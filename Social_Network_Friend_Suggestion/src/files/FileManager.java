@@ -18,7 +18,7 @@ public class FileManager {
     // Đọc danh sách User từ file
     public static boolean loadUsers(SocialNetworkFacade facade) {
         try (BufferedReader br = Files.newBufferedReader(
-                Paths.get("data/users.txt"), StandardCharsets.UTF_8)) {
+                Paths.get("Social_Network_Friend_Suggestion/data/users.txt"), StandardCharsets.UTF_8)) {
 
             String line;
 
@@ -60,7 +60,7 @@ public class FileManager {
     // Đọc quan hệ bạn bè từ file
     public static boolean loadFriendships(SocialNetworkFacade facade) {
         try (BufferedReader br = Files.newBufferedReader(
-                Paths.get("data/friendships.txt"), StandardCharsets.UTF_8)) {
+                Paths.get("Social_Network_Friend_Suggestion/data/friendships.txt"), StandardCharsets.UTF_8)) {
 
             String line;
 
