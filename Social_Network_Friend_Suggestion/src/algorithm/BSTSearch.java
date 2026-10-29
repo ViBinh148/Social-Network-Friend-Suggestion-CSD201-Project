@@ -32,7 +32,7 @@ public class BSTSearch {
         }
     }
 
-
+    // insert user vao cay BST
     public boolean insert(User user) {
         if (user == null) {
             return false;
@@ -44,7 +44,8 @@ public class BSTSearch {
 
         root = insertRec(root, user);
         return true;
-
+    }
+    // de quy xu ly insert
     private NodeBST insertRec(NodeBST node, User user) {
         if (node == null) {
             return new NodeBST(user);
@@ -162,28 +163,6 @@ public class BSTSearch {
     public int height() {
         return heightRec(root);
     }
-
-    public void findMax() {
-
-
-    // de quy xu ly search
-    private NodeBST searchRec(NodeBST node, int id) {
-        // Khong tim thay neu da di het nhanh cay.
-        if (node == null) {
-            return null;
-        }
-
-        int currentId = node.getData().getId();
-
-        // Tim thay nguoi dung.
-        if (id == currentId) {
-            return node;
-        }
-        if (id < node.getData().getId()) {
-            return searchRec(node.getLeft(), id);
-        }
-        return searchRec(node.getRight(), id);
-
 
     private int heightRec(NodeBST node) {
         if (node == null) {

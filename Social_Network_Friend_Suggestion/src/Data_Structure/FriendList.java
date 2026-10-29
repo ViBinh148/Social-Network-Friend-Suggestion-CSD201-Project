@@ -43,7 +43,7 @@ public class FriendList {
     }
 
     public void addFriendTail(User data) { // addTail
-        if (isEmpty()) {
+        if (isEmpty() || isFriend(data.getId())) {
             NodeFriend newNode = new NodeFriend(data);
             head = newNode;
             tail = newNode;
@@ -57,7 +57,7 @@ public class FriendList {
     }
 
     public void addFriendHead(User data) { // addhead
-        if (isEmpty()) {
+        if (isEmpty() || isFriend(data.getId())) {
             NodeFriend newNode = new NodeFriend(data);
             head = newNode;
             tail = newNode;
@@ -90,21 +90,21 @@ public class FriendList {
             return false;
         }
 
-        //Chỉ có một node
+        // Chỉ có một node
         if (head == tail) {
             head = null;
             tail = null;
-        } //Xóa node đầu
+        } // Xóa node đầu
         else if (current == head) {
             head = head.getNext();
             head.setPrev(null);
-        } //Xóa node cuối
+        } // Xóa node cuối
         else if (current == tail) {
             tail = tail.getPrev();
             tail.setNext(null);
-        } 
+        }
 
-        //Xóa node ở giữa 
+        // Xóa node ở giữa
         else {
             current.getPrev().setNext(current.getNext());
             current.getNext().setPrev(current.getPrev());
