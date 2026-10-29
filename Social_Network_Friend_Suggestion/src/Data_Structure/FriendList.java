@@ -42,33 +42,47 @@ public class FriendList {
         return head == null;
     }
 
-    public void addFriendTail(User data) { // addTail
-        if (isEmpty() || isFriend(data.getId())) {
-            NodeFriend newNode = new NodeFriend(data);
+
+    // Thêm bạn bè vào cuối DLL
+    public void addFriendTail(User data) {
+        if (data == null || isFriend(data.getId())) {
+            return;
+        }
+
+        NodeFriend newNode = new NodeFriend(data);
+
+        if (isEmpty()) {
             head = newNode;
             tail = newNode;
         } else {
-            NodeFriend newNode = new NodeFriend(data);
             tail.setNext(newNode);
             newNode.setPrev(tail);
             tail = newNode;
         }
+
         size++;
     }
 
-    public void addFriendHead(User data) { // addhead
-        if (isEmpty() || isFriend(data.getId())) {
-            NodeFriend newNode = new NodeFriend(data);
+    // Thêm bạn bè vào đầu DLL
+    public void addFriendHead(User data) {
+        if (data == null || isFriend(data.getId())) {
+            return;
+        }
+
+        NodeFriend newNode = new NodeFriend(data);
+        //tránh trường hợp size vẫn tăng khi user đã là bạn bè
+        if (isEmpty()) {
             head = newNode;
             tail = newNode;
         } else {
-            NodeFriend newNode = new NodeFriend(data);
             newNode.setNext(head);
             head.setPrev(newNode);
             head = newNode;
         }
+
         size++;
     }
+
 
     public boolean removeFriend(User data) {
         if (isEmpty() || data == null) {

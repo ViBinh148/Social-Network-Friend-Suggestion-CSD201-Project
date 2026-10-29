@@ -13,9 +13,18 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         SocialNetworkFacade facade = new SocialNetworkFacade();
 
-        // Đọc dữ liệu từ file khi khởi động
-        FileManager.loadUsers(facade);
-        FileManager.loadFriendships(facade);
+        // Đọc dữ liệu, dừng chương trình nếu có lỗi
+        if (!FileManager.loadUsers(facade)) {
+            System.out.println("Failed to start. User data could not be loaded.");
+            sc.close();
+            return;
+        }
+
+        if (!FileManager.loadFriendships(facade)) {
+            System.out.println("Failed to start. Friendship data could not be loaded.");
+            sc.close();
+            return;
+        }
 
         int choice;
 
